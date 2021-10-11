@@ -1,0 +1,138 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class App {
+
+
+    private static String The_Website_Name;
+    private static Scanner inputting = new Scanner(System.in);
+//let's declare the static variables now!
+    public static void main(String[] args) throws IOException {
+
+
+        MAKINGFILE getit = new MAKINGFILE();
+//Used to create class makingfile
+
+        System.out.print("Site name: ");
+        The_Website_Name = inputting.nextLine();
+        System.out.print("Author: ");
+        String author = inputting.nextLine();
+//these two are used to ask for the info the user would like to input in the program.
+
+
+        System.out.print("Do you want a folder for JavaScript? ");
+        char THE_JAVA_SCRIPT_FILE = inputting.next().charAt(0);
+
+//This asks the guy if they want a file thats javascript
+
+        System.out.print("Do you want a folder for CSS? ");
+        char THE_FILE_THATS_CSS = inputting.next().charAt(0);
+
+//this asks the individual if they want a css file.
+
+
+        System.out.println(getit .html(The_Website_Name, author));
+
+        System.out.println(getit .js(The_Website_Name, THE_JAVA_SCRIPT_FILE));
+
+        System.out.println(getit .css(The_Website_Name, THE_FILE_THATS_CSS));
+        //gets the work used in makingfile and prints the resulting output
+    }
+}
+
+
+//this is the makingfile class
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedWriter;
+
+import java.io.File;
+
+
+// This class uses methods to create all files desired by user
+
+
+
+
+public class MAKINGFILE
+{
+
+    public String html(String THE_WEBSITE_NAME, String NAME_OF_THE_PUBLISHER_OF_THE_WEBSITE) throws IOException
+    {
+
+
+        File NEED_TO_GET_THIS_FILE = new File("index.html");
+        BufferedWriter q7rx50 = new BufferedWriter(new FileWriter(NEED_TO_GET_THIS_FILE));
+
+        // Write new user info into html file using html syntax
+        String THE_TEXT_IN_HTML_PROGMING_LANGE = "<title> " + THE_WEBSITE_NAME + " </title>\n<meta> " + NAME_OF_THE_PUBLISHER_OF_THE_WEBSITE + " </meta>";
+//uses html to make data
+        if (NEED_TO_GET_THIS_FILE.exists())
+            q7rx50.write(THE_TEXT_IN_HTML_PROGMING_LANGE);
+
+
+        String THE_STATEMENT_THATS_BEING_USED_NOW = "Created ./website/" + THE_WEBSITE_NAME;
+        THE_STATEMENT_THATS_BEING_USED_NOW += "\nCreated ./website/" + THE_WEBSITE_NAME + "/" + NEED_TO_GET_THIS_FILE.getName();
+
+//show the created files now!
+
+        q7rx50.close();
+
+        return THE_STATEMENT_THATS_BEING_USED_NOW;
+    }
+
+    public String js(String THE_NAME_OF_THIS_WEBSITE, char THE_ANSWER_THAT_THE_USER_HAS_INPUTTED)
+    {
+
+        //if the guy wants a javascript file...
+        if (THE_ANSWER_THAT_THE_USER_HAS_INPUTTED == 'y' || THE_ANSWER_THAT_THE_USER_HAS_INPUTTED == 'Y' )
+        {
+
+            File FILE_IN_JAVA_SCPT = new File("file.js");
+            FILE_IN_JAVA_SCPT.mkdir();
+            return "Created ./website/" + THE_NAME_OF_THIS_WEBSITE + "/js/";
+        }
+
+                else
+
+                return null;
+                //will return garbage value
+    }
+
+    public String css(String NAME_OF_THIS_WEBSITE, char THE_ANSWER_THAT_THE_USER_HAS_INPUTTED) {
+
+
+        //if the guy wants a css file...
+        if (THE_ANSWER_THAT_THE_USER_HAS_INPUTTED == 'y' || THE_ANSWER_THAT_THE_USER_HAS_INPUTTED == 'Y') {
+            File FILE_THATS_IN_CSS= new File("file.css");
+            FILE_THATS_IN_CSS.mkdir();
+            return "Created ./website/" + NAME_OF_THIS_WEBSITE + "/css/";
+        }
+
+             else
+            return null;
+            //will return garbage value
+    }
+
+
+
+}
+
+This is the code in the class AppTest
+
+
+        import static org.junit.Assert.assertTrue;
+        //This is a very useful method that determines if the test case status will pass or end up failing.
+        import org.junit.Assert;
+
+        import org.junit.Test;
+
+        public class AppTest {
+
+            @Test
+            public void shouldAnswerWithTrue()
+           // "shouldAnswerWithTrue" This invokes the method assertTrue
+            {
+                assertTrue(true);
+                //This means that you will assert that your expression in correct.
+            }

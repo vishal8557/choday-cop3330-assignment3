@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class App{
+- App : ArrayList<listofwords>
+- ArrayList<listofwords> -> HOW_MANY_WORDS
+- This_is_the_word_name
+}
+class letscomparenow{
+- letscomparenow : Comparator<listofwords>
+- itsforsndword -> Lets_count_right_now
+}
+class listofwords{
+- listofwords -> lets_cnt_how_many_there_r
+-  this.this_for_the_name -> stringname
+- Grabbing_the_name_now
+-this_for_the_name
+-counting_the_number_of_similar_words_in_file_now
+}
+
+@enduml

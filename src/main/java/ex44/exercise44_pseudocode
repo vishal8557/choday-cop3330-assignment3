@@ -1,0 +1,85 @@
+//This is class "App"
+public class App
+{
+    String[] traverseFile (List<String> THE_LIST_OF_THE_PRODUCTS_HERE, String SEARCHINGNOW) {
+        //This is used to create the array of stuff.
+        String[] The_Stuff ;
+        int chking_to_see_if_availbl;
+        chking_to_see_if_availbl = 0;
+
+        //This is used to see is what you search is available judging by the list given.
+
+        int mbusa;
+        for ( mbusa = 0; mbusa < THE_LIST_OF_THE_PRODUCTS_HERE.size(); ++mbusa)
+        {
+            if (THE_LIST_OF_THE_PRODUCTS_HERE.get(mbusa).equals(SEARCHINGNOW))
+                chking_to_see_if_availbl = mbusa;
+        }
+        // if what is inputted to the program is available, this will print out what is there.
+        System.out.printf("\nName: %s\nPrice: %s\nQuantity: %s", THE_LIST_OF_THE_PRODUCTS_HERE.get(chking_to_see_if_availbl), THE_LIST_OF_THE_PRODUCTS_HERE.get(chking_to_see_if_availbl + 1), THE_LIST_OF_THE_PRODUCTS_HERE.get(chking_to_see_if_availbl + 2));
+
+        The_Stuff = new String[]{THE_LIST_OF_THE_PRODUCTS_HERE.get(chking_to_see_if_availbl), THE_LIST_OF_THE_PRODUCTS_HERE.get(chking_to_see_if_availbl + 1), THE_LIST_OF_THE_PRODUCTS_HERE.get(chking_to_see_if_availbl + 2)};
+        return The_Stuff ;
+    }
+
+  //This is the "searchmerch class"
+  public class searchmerch {
+
+      static Scanner input = new Scanner(System.in);
+      public static void main(String[] args)throws Exception{
+
+
+
+          //THis is the object of type.
+          App q7rxhcrexp = new App();
+          declaration of the variables used in program.
+          String[] how_much_is_the_item_thats_in_inventry = {"25.00", "15.00", "5.00"};
+          String[] The_name_of_the_item_there = {"Widget", "Thing", "Doodad", "thing"};
+          String[] How_many_items_are_available_right_now = {"5", "5", "10"};
+          //String[] how_much_is_the_item_thats_in_inventry = {"25.00", "15.00", "5.00"};
+          String[] the_final_answer = new String[3];
+          // Create list to take info
+          List<String> list = new ArrayList();
+
+  //This will put the elements to our list.
+          int vz;
+          for ( vz = 0; vz < 3; ++vz)
+          {
+              list.add(The_name_of_the_item_there [vz]);
+              list.add(how_much_is_the_item_thats_in_inventry [vz]);
+              list.add(How_many_items_are_available_right_now [vz]);
+          }
+
+          String SEARCHINGNOW;
+          System.out.print("What is the product name? ");
+          prints out product not found if it is not found and what the product name is.
+          SEARCHINGNOW = input.next();
+          while (!list.contains(SEARCHINGNOW)) {
+              System.out.println("Sorry that product was not found in our inventory");
+              System.out.print("What is the product name? ");
+              SEARCHINGNOW = input.next();
+          }
+          the_final_answer = q7rxhcrexp.traverseFile(list, SEARCHINGNOW);
+      }
+
+
+
+  }
+  This is the code in the class AppTest
+
+
+          import static org.junit.Assert.assertTrue;
+          //This is a very useful method that determines if the test case status will pass or end up failing.
+          import org.junit.Assert;
+
+          import org.junit.Test;
+
+          public class AppTest {
+
+              @Test
+              public void shouldAnswerWithTrue()
+             // "shouldAnswerWithTrue" This invokes the method assertTrue
+              {
+                  assertTrue(true);
+                  //This means that you will assert that your expression in correct.
+              }

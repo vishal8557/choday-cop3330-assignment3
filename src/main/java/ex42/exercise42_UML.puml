@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class App{
+- App : ArrayList<String>
+- ArrayList -> list_of_names_from_the_file
+}
+class Process{
+- ArrayList -> the_exercise_file_path_here
+- the_names_of_the_ppl_in_our_list
+- ArrayList -> rws_of_the_names_here
+}
+@enduml

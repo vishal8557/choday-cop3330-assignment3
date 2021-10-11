@@ -1,0 +1,84 @@
+public class App {
+        private static int lets_count_now;
+
+        public static void main(String[] args )throws Exception{
+                ArrayList<String> this_is_our_array = new ArrayList<String>();
+                ArrayList<String> our_array_in_Alphabetical_Order = new ArrayList<String>();
+
+                this_is_our_array = grab_our_input_now
+                        ("C:\\Users\\choda\\IdeaProjects\\example1\\src\\main\\java\\ex41\\base\\exercise41_input.txt");
+                // This is used to scan the input file and grab the input from it.
+                our_array_in_Alphabetical_Order = our_name_list.sortList(this_is_our_array);
+                // this is used to make an array in alphabetical order.
+
+                our_name_list.list_in_output(our_array_in_Alphabetical_Order, lets_count_now);
+                // This is used to print the names alphabetically to out output file.
+
+        }
+        public static ArrayList<String> grab_our_input_now(String file) throws FileNotFoundException {
+                ArrayList<String>THE_LIST = new ArrayList<String>();
+                Scanner in = new Scanner(new File(file));
+                //This is used to read the file in java using the scanner.
+                while (in.hasNextLine()) {
+                //This will return true if it is able to find another line.
+
+                        THE_LIST.add(in.nextLine());
+                        ++lets_count_now;
+                }
+                return THE_LIST;
+        }
+}
+This is for the class "our_name_list"
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+// this will add all the elements that are specified to the collection that's specified.
+
+
+public class our_name_list {
+    public static ArrayList<String> sortList(ArrayList<String> list)
+    {
+        Collections.sort(THE_RECORD);
+        //collections is used for list to be sorted in ascending order.
+        return THE_RECORD;
+    }
+
+    public static void list_in_output(ArrayList<String> THE_RECORD, int counter) throws IOException {
+        FileWriter writer = new FileWriter
+        This //wrtier is is used for writing streams of characters.
+                ("C:\\Users\\choda\\IdeaProjects\\example1\\src\\main\\java\\ex41\\base\\exercise41_output.txt");
+                //path for creating output file of names in alphabetical order.
+        writer.write("Total of " + counter + " names_in_list\n");
+        writer.write("-----------------\n");
+
+        for ( String str : THE_RECORD)
+        //forloop for string str: THE_RECORD
+         {
+          writer.write(str + System.lineSeparator());
+          //This is a method that's built in the program which will return the string of the system-dependent line separator.
+        }
+        writer.close();
+        //Closes the writer.
+        }
+        }
+
+        This is the code in the class AppTest
+
+
+        import static org.junit.Assert.assertTrue;
+        //This is a very useful method that determines if the test case status will pass or end up failing.
+        import org.junit.Assert;
+
+        import org.junit.Test;
+
+        public class AppTest {
+
+            @Test
+            public void shouldAnswerWithTrue()
+           // "shouldAnswerWithTrue" This invokes the method assertTrue
+            {
+                assertTrue(true);
+                //This means that you will assert that your expression in correct.
+            }
+        }

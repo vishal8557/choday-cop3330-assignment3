@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class App{
+- App: ArrayList
+- The_Website_Name
+- inputting
+}
+class MAKINGFILE{
+- MaKINGFILE -> THE_WEBSITE_NAME -> NAME_OF_THE_PUBLISHER_OF_THE_WEBSITE
+- NEED_TO_GET_THIS_FILE
+- THE_STATEMENT_THATS_BEING_USED_NOW
+}
+@enduml

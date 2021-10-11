@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class App{
+- App : List<String>
+- wht_wre_pting_in_the_otput_now -> ArrayList
+-doing_the_bff_writer_now.write -> this_is_the_line.get(VC)
+}
+@enduml

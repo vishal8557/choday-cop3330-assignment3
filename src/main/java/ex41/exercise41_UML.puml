@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class App{
+- App : ArrayList<String>
+- lets_count_now
+- THE_LIST
+}
+class our_name_list{
+- ArrayList -> THE_RECORD
+- count_now
+
+}
+@enduml
